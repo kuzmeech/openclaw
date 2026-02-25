@@ -39,6 +39,7 @@ final class CanvasWindowController: NSWindowController, WKNavigationDelegate, NS
         canvasWindowLogger.debug("CanvasWindowController init scheme handler ready")
 
         let config = WKWebViewConfiguration()
+        config.websiteDataStore = .nonPersistent()
         config.userContentController = WKUserContentController()
         config.preferences.isElementFullscreenEnabled = true
         config.preferences.setValue(true, forKey: "developerExtrasEnabled")
